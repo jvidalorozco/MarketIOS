@@ -31,9 +31,9 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bdm-OF-ua6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Wi-8L-Wpn">
-                            <size key="itemSize" width="162" height="166"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Wi-8L-Wpn">
+                            <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -54,24 +54,29 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6j-dF-f3i">
-                                            <rect key="frame" x="0.0" y="65" width="123" height="42"/>
+                                            <rect key="frame" x="0.0" y="80" width="123" height="45"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="42" id="m0t-af-9PK"/>
+                                                <constraint firstAttribute="height" constant="45" id="m0t-af-9PK"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="kOE-nW-JHS" firstAttribute="top" secondItem="Bcb-xk-SO0" secondAttribute="top" id="2Fx-v2-gjL"/>
                                         <constraint firstAttribute="trailing" secondItem="v6j-dF-f3i" secondAttribute="trailing" constant="-3" id="aK9-fQ-OqR"/>
-                                        <constraint firstAttribute="bottom" secondItem="v6j-dF-f3i" secondAttribute="bottom" constant="13" id="iZ8-6A-mxK"/>
+                                        <constraint firstAttribute="bottom" secondItem="v6j-dF-f3i" secondAttribute="bottom" constant="-5" id="iZ8-6A-mxK"/>
                                         <constraint firstItem="v6j-dF-f3i" firstAttribute="leading" secondItem="Bcb-xk-SO0" secondAttribute="leading" id="jsw-LQ-5Xt"/>
                                         <constraint firstItem="kOE-nW-JHS" firstAttribute="centerX" secondItem="Bcb-xk-SO0" secondAttribute="centerX" constant="2" id="lLf-m5-vbo"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="120" height="120"/>
+                                <connections>
+                                    <outlet property="imageView" destination="kOE-nW-JHS" id="oVq-aD-Iqx"/>
+                                    <outlet property="nameLabel" destination="v6j-dF-f3i" id="3sk-yb-Ka5"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -95,19 +100,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EPh-UG-Etn" kind="relationship" relationship="viewControllers" id="Vjk-Ag-K5H"/>
                         <segue destination="VDr-xp-lWj" kind="relationship" relationship="viewControllers" id="uP0-Kq-in4"/>
+                        <segue destination="EPh-UG-Etn" kind="relationship" relationship="viewControllers" id="Vjk-Ag-K5H"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6n-A9-wtt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896" y="-37"/>
         </scene>
-        <!--Item-->
+        <!--Category-->
         <scene sceneID="zsd-oU-QiM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VDr-xp-lWj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rIg-8t-UhJ"/>
+                    <tabBarItem key="tabBarItem" title="Category" id="rIg-8t-UhJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KFF-dc-ocM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
