@@ -41,12 +41,17 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
-      
         cell.generateCell(categoryArray[indexPath.row])
-        
-    
         return cell
     }
+    
+    
+    //MARK: UICollectionView Delegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "categoryToItemsSeg", sender: categoryArray[indexPath.row])
+    }
+    
+    
     
     //MARK: Download categories
     private func loadCategories(){
@@ -54,6 +59,15 @@ class CategoryCollectionViewController: UICollectionViewController {
             print("We have",allCategories.count)
             self.categoryArray = allCategories
             self.collectionView.reloadData()
+        }
+    }
+    
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "categoryToItemsSeg"{
+            let itemsVC      = segue.destination as! ItemsTableViewController
+            itemsVC.category = sender as? Category
         }
     }
 }
