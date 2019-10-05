@@ -12,11 +12,13 @@ class ItemsTableViewController: UITableViewController {
 
     //MARK: Vars
     var category : Category?
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("category", category?.name)
+        print("category", category?.name ?? "No hay categorias")
     }
 
     // MARK: - Table view data source

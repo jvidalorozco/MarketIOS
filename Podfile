@@ -9,4 +9,8 @@ target 'Market' do
   # add pods for desired Firebase products
   pod 'Firebase'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'JGProgressHUD'
+  pod 'Gallery'
+  pod 'NVActivityIndicatorView'
 end

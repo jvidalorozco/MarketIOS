@@ -18,6 +18,11 @@
 		83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */; };
 		83F642C32346AC5A00DCA406 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C22346AC5A00DCA406 /* Category.swift */; };
 		83F642C62346B77D00DCA406 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C52346B77D00DCA406 /* Constants.swift */; };
+		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
+		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
+		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
+		CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */; };
+		CFFEFB2B2349037800FB3931 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB2A2349037800FB3931 /* Item.swift */; };
 		DD8624131FBA70FA9D03E8D6 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC38623964D15996587A3247 /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		83F642C22346AC5A00DCA406 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		83F642C52346B77D00DCA406 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		CFFEFB2A2349037800FB3931 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FC38623964D15996587A3247 /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,8 +109,10 @@
 		83F642C02346ABDD00DCA406 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CF912C7023492ED000321667 /* Reachability.swift */,
 				83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */,
 				83F642C52346B77D00DCA406 /* Constants.swift */,
+				CF912C7223492EFF00321667 /* Downloader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -108,6 +120,8 @@
 		83F642C12346ABE800DCA406 /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */,
+				CFFEFB262349032200FB3931 /* AddItemViewController.swift */,
 				83F642B6234696ED00DCA406 /* CategoryCollectionViewController.swift */,
 			);
 			path = "Main Views";
@@ -116,6 +130,7 @@
 		83F642C42346AC6100DCA406 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CFFEFB2A2349037800FB3931 /* Item.swift */,
 				83F642C22346AC5A00DCA406 /* Category.swift */,
 			);
 			name = Model;
@@ -255,11 +270,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFEFB2B2349037800FB3931 /* Item.swift in Sources */,
 				83F642B92346978200DCA406 /* CategoryCollectionViewCell.swift in Sources */,
+				CF912C7323492EFF00321667 /* Downloader.swift in Sources */,
+				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
 				83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */,
 				83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */,
 				83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */,
 				83F642C62346B77D00DCA406 /* Constants.swift in Sources */,
+				CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */,
+				CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */,
 				83F642B7234696ED00DCA406 /* CategoryCollectionViewController.swift in Sources */,
 				83F642C32346AC5A00DCA406 /* Category.swift in Sources */,
 			);
@@ -407,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S25J5N87M5;
+				DEVELOPMENT_TEAM = 4F7JSWEM4N;
 				INFOPLIST_FILE = Market/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S25J5N87M5;
+				DEVELOPMENT_TEAM = 4F7JSWEM4N;
 				INFOPLIST_FILE = Market/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
