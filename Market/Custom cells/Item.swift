@@ -47,3 +47,26 @@ func itemDictionaryFrom(_ item: Item) -> NSDictionary{
         item.description,item.price,item.imageLinks
     ], forKeys: [kOBJECTID as NSCopying,kCATEGOTYID as NSCopying,kName as NSCopying ,kDESCRIPTION as NSCopying,kPRICE as NSCopying,kIMAGELINKS as NSCopying])
 }
+
+
+//MARK: Download Func
+func downloadItemsFromFirebase(_ withCategoryId : String, completion: @escaping(_ itemsArray: [Item])->Void){
+    var itemArray: [Item] = []
+    FirebaseReference(.Items).whereField(kCATEGOTYID, isEqualTo: withCategoryId).getDocuments { (snapshot, error) in
+      
+        if error != nil {
+            completion(itemArray)
+            print("Error ha ocurrido", error?.localizedDescription ?? "Error")
+            return
+        }
+        
+        guard let snapshot = snapshot else { completion(itemArray);  return }
+       
+        if !snapshot.isEmpty{
+            for itemDict in snapshot.documents {
+                itemArray.append(Item(itemDict.data() as NSDictionary))
+            }
+        }
+        completion(itemArray)
+    }
+}

@@ -25,7 +25,7 @@ public let kOBJECTID       = "objectId"
 
 
 //Item
-public let kCATEGOTYID     = "objectId"
+public let kCATEGOTYID     = "categoryId"
 public let kDESCRIPTION    = "description"
 public let kPRICE          = "price"
 public let kIMAGELINKS     = "imageLinks"

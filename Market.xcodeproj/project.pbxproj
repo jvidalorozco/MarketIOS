@@ -18,6 +18,8 @@
 		83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */; };
 		83F642C32346AC5A00DCA406 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C22346AC5A00DCA406 /* Category.swift */; };
 		83F642C62346B77D00DCA406 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C52346B77D00DCA406 /* Constants.swift */; };
+		CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */; };
+		CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E092349C388007CACE6 /* HelpersFunctions.swift */; };
 		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
 		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
@@ -42,6 +44,8 @@
 		83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		83F642C22346AC5A00DCA406 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		83F642C52346B77D00DCA406 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
+		CF116E092349C388007CACE6 /* HelpersFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersFunctions.swift; sourceTree = "<group>"; };
 		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				83F642B82346978200DCA406 /* CategoryCollectionViewCell.swift */,
+				CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */,
 				83F642C52346B77D00DCA406 /* Constants.swift */,
 				CF912C7223492EFF00321667 /* Downloader.swift */,
+				CF116E092349C388007CACE6 /* HelpersFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -274,12 +280,14 @@
 				83F642B92346978200DCA406 /* CategoryCollectionViewCell.swift in Sources */,
 				CF912C7323492EFF00321667 /* Downloader.swift in Sources */,
 				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
+				CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */,
 				83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */,
 				83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */,
 				83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */,
 				83F642C62346B77D00DCA406 /* Constants.swift in Sources */,
 				CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */,
 				CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */,
+				CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */,
 				83F642B7234696ED00DCA406 /* CategoryCollectionViewController.swift in Sources */,
 				83F642C32346AC5A00DCA406 /* Category.swift in Sources */,
 			);

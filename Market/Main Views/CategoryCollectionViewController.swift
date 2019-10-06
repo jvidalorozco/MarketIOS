@@ -22,6 +22,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      //  createCategorySet()
         self.overrideUserInterfaceStyle = .light
     }
 
