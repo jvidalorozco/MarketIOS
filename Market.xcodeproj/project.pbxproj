@@ -20,6 +20,8 @@
 		83F642C62346B77D00DCA406 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C52346B77D00DCA406 /* Constants.swift */; };
 		CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */; };
 		CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E092349C388007CACE6 /* HelpersFunctions.swift */; };
+		CF857984234AD9FC004668FF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF857983234AD9FC004668FF /* ItemViewController.swift */; };
+		CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */; };
 		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
 		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
@@ -46,6 +48,8 @@
 		83F642C52346B77D00DCA406 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
 		CF116E092349C388007CACE6 /* HelpersFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersFunctions.swift; sourceTree = "<group>"; };
+		CF857983234AD9FC004668FF /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			children = (
 				83F642B82346978200DCA406 /* CategoryCollectionViewCell.swift */,
 				CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */,
+				CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */,
 				CFFEFB262349032200FB3931 /* AddItemViewController.swift */,
 				83F642B6234696ED00DCA406 /* CategoryCollectionViewController.swift */,
+				CF857983234AD9FC004668FF /* ItemViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 			files = (
 				CFFEFB2B2349037800FB3931 /* Item.swift in Sources */,
 				83F642B92346978200DCA406 /* CategoryCollectionViewCell.swift in Sources */,
+				CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */,
+				CF857984234AD9FC004668FF /* ItemViewController.swift in Sources */,
 				CF912C7323492EFF00321667 /* Downloader.swift in Sources */,
 				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
 				CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */,
