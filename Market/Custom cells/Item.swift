@@ -70,3 +70,15 @@ func downloadItemsFromFirebase(_ withCategoryId : String, completion: @escaping(
         completion(itemArray)
     }
 }
+
+
+func downloadItems(_ withIds: [String], completion: @escaping(_ itemArray: [Item])->Void){
+    
+    var count = 0
+    var itemArray: [Item] = []
+    
+    if withIds.count > 0 {
+        
+    }
+    
+}
