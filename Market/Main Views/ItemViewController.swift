@@ -31,6 +31,10 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         downloadPictures()
+        
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
     }
     
     //MARK: Download pictures
@@ -55,6 +59,58 @@ class ItemViewController: UIViewController {
         }
     }
     
+    //MARK: - IBActions
+    @objc func backAction(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func addToBasketButtonPressed(){
+        
+        //TODO: Check if user is logged
+        downloadBasketFromFirestore("1234") { (basket) in
+               if basket == nil {
+                   self.createNewBasket()
+               }else{
+                   basket!.itemIds.append(self.item.id)
+                   self.updateBasket(basket: basket!, withValues: [kITEMSIDS : basket!.itemIds])
+               }
+           }
+    }
+    
+    
+    //MARK: - Add to basket
+    private func createNewBasket(){
+        let newBasket      = Basket()
+        newBasket.id       = UUID().uuidString
+        newBasket.ownerId  = "1234"
+        newBasket.itemIds  = [self.item.id]
+        saveBasketToFirestore(newBasket)
+        
+        self.hud.textLabel.text     = "Added to basket!"
+        self.hud.indicatorView      = JGProgressHUDSuccessIndicatorView()
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
+     
+    }
+    
+    private func updateBasket(basket: Basket, withValues: [String: Any]){
+        updateBasketInFirestore(basket, withValues: withValues) { (error) in
+            if error != nil {
+                self.hud.textLabel.text     = "error updating basket \(error!.localizedDescription)"
+                self.hud.indicatorView      = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                print("error updating basket \(error!.localizedDescription)")
+            }else{
+                self.hud.textLabel.text     = "Added to basket!"
+                self.hud.indicatorView      = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+    }
+    
+   
 }
 
 extension ItemViewController: UICollectionViewDelegate, UICollectionViewDataSource{
