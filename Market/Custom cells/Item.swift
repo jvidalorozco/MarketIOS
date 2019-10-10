@@ -78,7 +78,30 @@ func downloadItems(_ withIds: [String], completion: @escaping(_ itemArray: [Item
     var itemArray: [Item] = []
     
     if withIds.count > 0 {
-        
+        for itemId in withIds {
+            FirebaseReference(.Items).document(itemId).getDocument { (snapshot, error) in
+                
+                guard let snapshot = snapshot else{
+                    completion(itemArray)
+                    return
+                }
+                if snapshot.exists {
+                    itemArray.append(Item(snapshot.data()! as NSDictionary))
+                    count += 1
+                }else{
+                    completion(itemArray)
+                }
+                
+                if count == withIds.count {
+                               completion(itemArray)
+                }
+            }
+           
+        }
+    }else{
+        completion(itemArray)
     }
+    
+    
     
 }

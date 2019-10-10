@@ -20,7 +20,7 @@ class BasketViewController: UIViewController {
     
     
     //MARK: - Vars
-    var basket: Basket?
+    var basket: Basket!
     var allitems: [Item]  = []
     var purcharsedItemIds : [String] = []
     
@@ -38,8 +38,7 @@ class BasketViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //TODO: Check if user is logged in
+        self.loadBasketFromFirestore()
         
     }
     
@@ -60,23 +59,28 @@ class BasketViewController: UIViewController {
     
     private func getBasketItems(){
         if basket != nil {
-            downloadItemsFromFirebase(<#T##withCategoryId: String##String#>, completion: <#T##([Item]) -> Void#>)
+            downloadItems(self.basket!.itemIds) { (allItems) in
+                print("All items", allItems)
+                self.allitems = allItems
+                self.tableview.reloadData()
+            }
         }
     }
  
 }
 
 extension BasketViewController : UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return allitems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellbasket", for: indexPath) as! ItemsTableViewCell
+        
+        cell.generateCell(allitems[indexPath.row])
+        
+        return cell
     }
 }

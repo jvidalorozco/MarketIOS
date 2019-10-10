@@ -59,10 +59,11 @@ func basketDictionaryFrom(_ basket : Basket) -> NSDictionary{
 //MARK: -Update basket
 func updateBasketInFirestore(_ basket: Basket, withValues: [String: Any], completion: @escaping(_ error: Error?)->Void){
     FirebaseReference(.Basket).document(basket.id).updateData(withValues) { (error) in
-        if let error = error {
-            completion(error)
-        }
+        
+        completion(error)
         
     }
+    
+    
     
 }

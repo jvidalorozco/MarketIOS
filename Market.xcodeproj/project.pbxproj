@@ -24,6 +24,8 @@
 		CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */; };
 		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
 		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
+		CF9BAC8A234EC990007E8667 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BAC89234EC98F007E8667 /* BasketViewController.swift */; };
+		CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE8D6A234C2E60008039D4 /* Basket.swift */; };
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
 		CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */; };
 		CFFEFB2B2349037800FB3931 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB2A2349037800FB3931 /* Item.swift */; };
@@ -52,6 +54,8 @@
 		CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		CF9BAC89234EC98F007E8667 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		CFEE8D6A234C2E60008039D4 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		CFFEFB2A2349037800FB3931 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		83F642C12346ABE800DCA406 /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF9BAC89234EC98F007E8667 /* BasketViewController.swift */,
 				CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */,
 				CFFEFB262349032200FB3931 /* AddItemViewController.swift */,
 				83F642B6234696ED00DCA406 /* CategoryCollectionViewController.swift */,
@@ -144,6 +149,7 @@
 			children = (
 				CFFEFB2A2349037800FB3931 /* Item.swift */,
 				83F642C22346AC5A00DCA406 /* Category.swift */,
+				CFEE8D6A234C2E60008039D4 /* Basket.swift */,
 			);
 			name = Model;
 			path = "Custom cells";
@@ -282,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF9BAC8A234EC990007E8667 /* BasketViewController.swift in Sources */,
 				CFFEFB2B2349037800FB3931 /* Item.swift in Sources */,
 				83F642B92346978200DCA406 /* CategoryCollectionViewCell.swift in Sources */,
 				CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */,
@@ -290,6 +297,7 @@
 				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
 				CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */,
 				83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */,
+				CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */,
 				83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */,
 				83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */,
 				83F642C62346B77D00DCA406 /* Constants.swift in Sources */,
