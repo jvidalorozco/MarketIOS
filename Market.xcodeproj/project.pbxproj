@@ -26,6 +26,7 @@
 		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
 		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
 		CF9BAC8A234EC990007E8667 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BAC89234EC98F007E8667 /* BasketViewController.swift */; };
+		CFDBAE2C23501E940037FDDE /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBAE2B23501E940037FDDE /* MUser.swift */; };
 		CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE8D6A234C2E60008039D4 /* Basket.swift */; };
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
 		CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		CF9BAC89234EC98F007E8667 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		CFDBAE2B23501E940037FDDE /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		CFEE8D6A234C2E60008039D4 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				CFFEFB2A2349037800FB3931 /* Item.swift */,
 				83F642C22346AC5A00DCA406 /* Category.swift */,
 				CFEE8D6A234C2E60008039D4 /* Basket.swift */,
+				CFDBAE2B23501E940037FDDE /* MUser.swift */,
 			);
 			name = Model;
 			path = "Custom cells";
@@ -309,6 +312,7 @@
 				CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */,
 				83F642B7234696ED00DCA406 /* CategoryCollectionViewController.swift in Sources */,
 				83F642C32346AC5A00DCA406 /* Category.swift in Sources */,
+				CFDBAE2C23501E940037FDDE /* MUser.swift in Sources */,
 				83A036DF234FE5FF008AEFD8 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,20 +16,16 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var resendButtonOutlet: UIButton!
     
     //MARK: - Lyfecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-  
     }
-    
     
     //MARK: IBActions
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
-        
     }
     
     @IBAction func registerBottonPressed(_ sender: Any) {
@@ -40,5 +36,9 @@ class WelcomeViewController: UIViewController {
     }
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

@@ -67,14 +67,16 @@ class ItemViewController: UIViewController {
     @objc func addToBasketButtonPressed(){
         
         //TODO: Check if user is logged
-        downloadBasketFromFirestore("1234") { (basket) in
-               if basket == nil {
-                   self.createNewBasket()
-               }else{
-                   basket!.itemIds.append(self.item.id)
-                   self.updateBasket(basket: basket!, withValues: [kITEMSIDS : basket!.itemIds])
-               }
-           }
+//        downloadBasketFromFirestore("1234") { (basket) in
+//               if basket == nil {
+//                   self.createNewBasket()
+//               }else{
+//                   basket!.itemIds.append(self.item.id)
+//                   self.updateBasket(basket: basket!, withValues: [kITEMSIDS : basket!.itemIds])
+//               }
+//           }
+        
+        showLoginView()
     }
     
     
@@ -110,6 +112,13 @@ class ItemViewController: UIViewController {
         }
     }
     
+    
+    //MARK: - Show login view
+    
+    private func showLoginView(){
+        let  loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
+    }
    
 }
 

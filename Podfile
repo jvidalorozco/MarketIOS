@@ -10,6 +10,7 @@ target 'Market' do
   pod 'Firebase'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
   pod 'JGProgressHUD'
   pod 'Gallery'
   pod 'NVActivityIndicatorView'

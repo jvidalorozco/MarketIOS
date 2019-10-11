@@ -34,3 +34,14 @@ public let kIMAGELINKS     = "imageLinks"
 //Basket
 public let kOWNERID        = "ownerId"
 public let kITEMSIDS       = "itemIds"
+
+
+//User
+public let kEMAIL          = "email"
+public let kFIRSTNAME      = "firstName"
+public let kLASTNAME       = "lastName"
+public let kFULLNAME       = "fullName"
+public let kCURRENTUSER    = "currentUser"
+public let kFULLADDRESS    = "fullAddress"
+public let kONBOARD        = "onBoard"
+public let kPURCHARSEDITEMIDS  = "purcharsedItemIds"
