@@ -69,7 +69,7 @@ class MUser{
             if error == nil{
                 
                 if authDataResult!.user.isEmailVerified {
-                    //TODO: Download user from firestore
+                    downloadUserFromFirestore(userId: (authDataResult!.user.uid), email: email)
                     completion(error,true)
                 }else{
                     print("Email is not verified")
@@ -83,7 +83,7 @@ class MUser{
         
     }
     
-    //MARK - Register user
+//MARK: - Register user
     class func registerUserWith(email: String, password: String, completion: @escaping(_ error: Error?)-> Void){
         Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
             
@@ -96,5 +96,61 @@ class MUser{
             }
         }
     }
+//MARK: - Resend link methods
+class func resetPasswordFor(email: String, completion: @escaping(_ error: Error?) -> Void){
+    Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+        completion(error)
+    }
+}
     
+class func resendVerificationEmail(email: String , completion: @escaping(_ error: Error?) -> Void){
+    Auth.auth().currentUser?.reload(completion: { (error) in
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+            print("resend email error: ",error?.localizedDescription)
+            completion(error)
+        })
+    })
+}
+    
+}
+
+//MARK: - DownloadUser
+func downloadUserFromFirestore(userId: String, email: String){
+    FirebaseReference(.User).document(userId).getDocument { (snapshot, error) in
+        
+        guard let snapshot = snapshot else{ return}
+        if snapshot.exists {
+            print("download current user from firestore")
+            saveUserLocally(mUserDictionary: snapshot.data()! as NSDictionary)
+        }else{
+            //there is no user, save new in firestore
+            let user = MUser(_objectId: userId, _email: email, _firstName: "", _lastName: "")
+            saveUserLocally(mUserDictionary: userDictionaryFrom(user: user))
+            saveUserToFirestore(mUser: user)
+        }
+        
+    }
+   
+
+}
+
+
+
+//MARK: - Save user to firebase
+func saveUserToFirestore(mUser: MUser){
+    FirebaseReference(.User).document(mUser.objectId).setData(userDictionaryFrom(user: mUser) as! [String: Any]) { (error) in
+        if error != nil {
+            print("error saving user \(error!.localizedDescription)")
+        }
+    }
+}
+
+func saveUserLocally(mUserDictionary: NSDictionary){
+    UserDefaults.standard.set(mUserDictionary, forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+}
+
+//MARK: - Helper function
+func userDictionaryFrom(user: MUser) -> NSDictionary{
+    return NSDictionary(objects: [user.objectId, user.email,user.firstName,user.lastName,user.fullName, user.fullAddress ?? "",user.onBoard], forKeys: [kOBJECTID as NSCopying,kEMAIL as NSCopying, kFIRSTNAME as NSCopying,kLASTNAME as NSCopying,kFULLNAME as NSCopying, kFULLADDRESS as NSCopying,kONBOARD as NSCopying])
 }
