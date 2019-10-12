@@ -311,6 +311,92 @@
             </objects>
             <point key="canvasLocation" x="3436" y="987.25637181409309"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="1ab-Qf-9Xe">
+            <objects>
+                <tableViewController id="fPo-sA-hT4" customClass="ProfileTableViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ba3-G7-0Go">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="K0r-f5-amv">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rfA-k3-gdW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rfA-k3-gdW" id="687-Cg-xD2">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25w-oO-JKO">
+                                                    <rect key="frame" x="16" y="7" width="324.5" height="30"/>
+                                                    <state key="normal" title="Finish registration"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="25w-oO-JKO" secondAttribute="trailing" constant="7.5" id="QeD-SD-iTi"/>
+                                                <constraint firstItem="25w-oO-JKO" firstAttribute="leading" secondItem="687-Cg-xD2" secondAttribute="leading" constant="16" id="eoL-rZ-nov"/>
+                                                <constraint firstItem="25w-oO-JKO" firstAttribute="centerY" secondItem="687-Cg-xD2" secondAttribute="centerY" id="iai-ce-eDS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="oVA-fX-9Uw">
+                                        <rect key="frame" x="0.0" y="71.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oVA-fX-9Uw" id="3gE-tU-Tm9">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dne-88-2JF">
+                                                    <rect key="frame" x="16" y="7" width="324.5" height="30"/>
+                                                    <state key="normal" title="Purcharse history"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dne-88-2JF" firstAttribute="centerY" secondItem="3gE-tU-Tm9" secondAttribute="centerY" id="cFc-Kq-El1"/>
+                                                <constraint firstAttribute="trailing" secondItem="dne-88-2JF" secondAttribute="trailing" constant="7.5" id="kiP-hX-QBh"/>
+                                                <constraint firstItem="dne-88-2JF" firstAttribute="leading" secondItem="3gE-tU-Tm9" secondAttribute="leading" constant="16" id="me6-PA-Ggv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Xmn-YW-ffQ">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xmn-YW-ffQ" id="32m-u9-lUn">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-sV-Jw4">
+                                                    <rect key="frame" x="16" y="7" width="324.5" height="30"/>
+                                                    <state key="normal" title="Terms &amp; Conditions"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MtT-sV-Jw4" firstAttribute="centerY" secondItem="32m-u9-lUn" secondAttribute="centerY" id="3DN-1K-lNC"/>
+                                                <constraint firstAttribute="trailing" secondItem="MtT-sV-Jw4" secondAttribute="trailing" constant="7.5" id="h5T-Kz-82D"/>
+                                                <constraint firstItem="MtT-sV-Jw4" firstAttribute="leading" secondItem="32m-u9-lUn" secondAttribute="leading" constant="16" id="v1h-GE-jVF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fPo-sA-hT4" id="CzF-5F-gF6"/>
+                            <outlet property="delegate" destination="fPo-sA-hT4" id="mlx-Pk-Wvb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Profile" id="yO8-qQ-BCz"/>
+                    <connections>
+                        <outlet property="finishRegistrationButtonOutlet" destination="25w-oO-JKO" id="UZg-f8-Yk4"/>
+                        <outlet property="purcharseHistoryButtonOutlet" destination="dne-88-2JF" id="haL-4B-wmK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKE-XG-xKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752.8000000000002" y="1681.7091454272866"/>
+        </scene>
         <!--Category-->
         <scene sceneID="HUj-jo-0Op">
             <objects>
@@ -670,6 +756,7 @@
                         <segue destination="VDr-xp-lWj" kind="relationship" relationship="viewControllers" id="uP0-Kq-in4"/>
                         <segue destination="EPh-UG-Etn" kind="relationship" relationship="viewControllers" id="Vjk-Ag-K5H"/>
                         <segue destination="f9M-BT-zbX" kind="relationship" relationship="viewControllers" id="t8m-fM-Kai"/>
+                        <segue destination="W9a-CW-PJd" kind="relationship" relationship="viewControllers" id="aRx-hv-fkU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6n-A9-wtt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -714,10 +801,30 @@
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="986.35682158920542"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="GX2-fD-W09">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W9a-CW-PJd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="7NZ-Fh-F3B"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="imY-vK-e2A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fPo-sA-hT4" kind="relationship" relationship="rootViewController" id="bwi-4y-qoq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSW-LI-I0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.5999999999999" y="1681.7091454272866"/>
+        </scene>
     </scenes>
     <resources>
         <image name="basket" width="30" height="30"/>
         <image name="homeIcon" width="30" height="30"/>
         <image name="imagePlaceholder" width="150" height="113.5"/>
+        <image name="profile" width="30" height="30"/>
     </resources>
 </document>
