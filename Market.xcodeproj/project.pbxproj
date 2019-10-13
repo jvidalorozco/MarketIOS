@@ -19,6 +19,9 @@
 		83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */; };
 		83F642C32346AC5A00DCA406 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C22346AC5A00DCA406 /* Category.swift */; };
 		83F642C62346B77D00DCA406 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642C52346B77D00DCA406 /* Constants.swift */; };
+		CF079C9C2352A03000F3180C /* FinisRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF079C9B2352A03000F3180C /* FinisRegisterViewController.swift */; };
+		CF079C9F2352B33500F3180C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF079C9E2352B33500F3180C /* EditProfileViewController.swift */; };
+		CF079CA32352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF079CA22352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift */; };
 		CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */; };
 		CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF116E092349C388007CACE6 /* HelpersFunctions.swift */; };
 		CF7C8EBA2351982C00D60F1F /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C8EB92351982C00D60F1F /* ProfileTableViewController.swift */; };
@@ -52,6 +55,9 @@
 		83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		83F642C22346AC5A00DCA406 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		83F642C52346B77D00DCA406 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF079C9B2352A03000F3180C /* FinisRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinisRegisterViewController.swift; sourceTree = "<group>"; };
+		CF079C9E2352B33500F3180C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		CF079CA22352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurcharsedHistoryTableViewController.swift; sourceTree = "<group>"; };
 		CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
 		CF116E092349C388007CACE6 /* HelpersFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersFunctions.swift; sourceTree = "<group>"; };
 		CF7C8EB92351982C00D60F1F /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +152,10 @@
 				CFFEFB262349032200FB3931 /* AddItemViewController.swift */,
 				83F642B6234696ED00DCA406 /* CategoryCollectionViewController.swift */,
 				CF857983234AD9FC004668FF /* ItemViewController.swift */,
-				83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */,
+				CF079C9D2352A06700F3180C /* Login Views */,
 				CF7C8EB92351982C00D60F1F /* ProfileTableViewController.swift */,
+				CF079C9E2352B33500F3180C /* EditProfileViewController.swift */,
+				CF079CA22352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -171,6 +179,15 @@
 				0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF079C9D2352A06700F3180C /* Login Views */ = {
+			isa = PBXGroup;
+			children = (
+				83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */,
+				CF079C9B2352A03000F3180C /* FinisRegisterViewController.swift */,
+			);
+			path = "Login Views";
 			sourceTree = "<group>";
 		};
 		E7CC1272B2BDB9FC4908D407 /* Frameworks */ = {
@@ -304,9 +321,11 @@
 				CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */,
 				CF857984234AD9FC004668FF /* ItemViewController.swift in Sources */,
 				CF912C7323492EFF00321667 /* Downloader.swift in Sources */,
+				CF079CA32352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift in Sources */,
 				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
 				CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */,
 				83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */,
+				CF079C9F2352B33500F3180C /* EditProfileViewController.swift in Sources */,
 				CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */,
 				83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */,
 				83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */,
@@ -316,6 +335,7 @@
 				CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */,
 				83F642B7234696ED00DCA406 /* CategoryCollectionViewController.swift in Sources */,
 				83F642C32346AC5A00DCA406 /* Category.swift in Sources */,
+				CF079C9C2352A03000F3180C /* FinisRegisterViewController.swift in Sources */,
 				CFDBAE2C23501E940037FDDE /* MUser.swift in Sources */,
 				83A036DF234FE5FF008AEFD8 /* WelcomeViewController.swift in Sources */,
 			);

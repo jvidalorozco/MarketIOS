@@ -34,14 +34,45 @@ class MUser{
     }
     
     init(_dictionary: NSDictionary) {
-        self.objectId          = _dictionary[kOBJECTID] as! String
-        self.email             = _dictionary[kEMAIL]    as! String
-        self.firstName         = _dictionary[kFIRSTNAME] as! String
-        self.lastName          = _dictionary[kLASTNAME] as! String
-        self.fullName          = _dictionary[kFULLNAME] as! String
-        self.fullAddress       = _dictionary[kFULLADDRESS] as! String
-        self.onBoard           = _dictionary[kONBOARD] as! Bool
-        self.purcharsedItemIds = _dictionary[kPURCHARSEDITEMIDS] as! [String]
+         objectId = _dictionary[kOBJECTID] as! String
+         
+         if let mail = _dictionary[kEMAIL] {
+             email = mail as! String
+         } else {
+             email = ""
+         }
+         
+         if let fname = _dictionary[kFIRSTNAME] {
+             firstName = fname as! String
+         } else {
+             firstName = ""
+         }
+         if let lname = _dictionary[kLASTNAME] {
+             lastName = lname as! String
+         } else {
+             lastName = ""
+         }
+         
+         fullName = firstName + " " + lastName
+         
+         if let faddress = _dictionary[kFULLADDRESS] {
+            fullAddress = faddress as! String
+         } else {
+            fullAddress = ""
+         }
+         
+         if let onB = _dictionary[kONBOARD] {
+           onBoard = onB as! Bool
+         } else {
+           onBoard = false
+         }
+
+         if let purchaseIds = _dictionary[kPURCHARSEDITEMIDS] {
+          purcharsedItemIds = purchaseIds as! [String]
+        } else {
+          purcharsedItemIds = []
+        }
+
       
     }
     
@@ -111,6 +142,18 @@ class func resendVerificationEmail(email: String , completion: @escaping(_ error
         })
     })
 }
+    class func logOutCurrentUser(completion: @escaping(_ error: Error?)->Void){
+        
+        do {
+            try   Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+            UserDefaults.standard.synchronize()
+            completion(nil)
+        } catch let error as NSError {
+            completion(error)
+        }
+      
+    }
     
 }
 
@@ -152,5 +195,23 @@ func saveUserLocally(mUserDictionary: NSDictionary){
 
 //MARK: - Helper function
 func userDictionaryFrom(user: MUser) -> NSDictionary{
-    return NSDictionary(objects: [user.objectId, user.email,user.firstName,user.lastName,user.fullName, user.fullAddress ?? "",user.onBoard], forKeys: [kOBJECTID as NSCopying,kEMAIL as NSCopying, kFIRSTNAME as NSCopying,kLASTNAME as NSCopying,kFULLNAME as NSCopying, kFULLADDRESS as NSCopying,kONBOARD as NSCopying])
+    return NSDictionary(objects: [user.objectId, user.email,user.firstName,user.lastName,user.fullName, user.fullAddress,user.onBoard, user.purcharsedItemIds], forKeys: [kOBJECTID as NSCopying,kEMAIL as NSCopying, kFIRSTNAME as NSCopying,kLASTNAME as NSCopying,kFULLNAME as NSCopying, kFULLADDRESS as NSCopying,kONBOARD as NSCopying,kPURCHARSEDITEMIDS as NSCopying])
+}
+
+
+//MARK: - Update user
+func updateCurrentUserInFirestore(withValues: [String: Any], completion: @escaping(_ error: Error?)->Void){
+    
+    if let dictionary = UserDefaults.standard.object(forKey: kCURRENTUSER) {
+        let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        userObject.setValuesForKeys(withValues)
+        
+        FirebaseReference(.User).document(MUser.currentId()).updateData(withValues) { (error) in
+            completion(error)
+            if error == nil {
+                saveUserLocally(mUserDictionary: userObject)
+            }
+        }
+    }
+    
 }
