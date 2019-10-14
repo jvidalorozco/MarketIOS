@@ -14,4 +14,5 @@ target 'Market' do
   pod 'JGProgressHUD'
   pod 'Gallery'
   pod 'NVActivityIndicatorView'
+  pod 'PayPal-iOS-SDK'
 end

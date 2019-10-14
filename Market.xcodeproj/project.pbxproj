@@ -30,6 +30,7 @@
 		CF912C7123492ED000321667 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7023492ED000321667 /* Reachability.swift */; };
 		CF912C7323492EFF00321667 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF912C7223492EFF00321667 /* Downloader.swift */; };
 		CF9BAC8A234EC990007E8667 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BAC89234EC98F007E8667 /* BasketViewController.swift */; };
+		CFBC7E2A2354F2F600B77C59 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC7E292354F2F600B77C59 /* SearchViewController.swift */; };
 		CFDBAE2C23501E940037FDDE /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBAE2B23501E940037FDDE /* MUser.swift */; };
 		CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE8D6A234C2E60008039D4 /* Basket.swift */; };
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
@@ -61,11 +62,13 @@
 		CF116E072349B16A007CACE6 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
 		CF116E092349C388007CACE6 /* HelpersFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersFunctions.swift; sourceTree = "<group>"; };
 		CF7C8EB92351982C00D60F1F /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		CF855D932353B86000FB7A87 /* Market-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Market-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF857983234AD9FC004668FF /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		CF857985234AE5B4004668FF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF912C7023492ED000321667 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF912C7223492EFF00321667 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		CF9BAC89234EC98F007E8667 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		CFBC7E292354F2F600B77C59 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CFDBAE2B23501E940037FDDE /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		CFEE8D6A234C2E60008039D4 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				CF7C8EB92351982C00D60F1F /* ProfileTableViewController.swift */,
 				CF079C9E2352B33500F3180C /* EditProfileViewController.swift */,
 				CF079CA22352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift */,
+				CF855D932353B86000FB7A87 /* Market-Bridging-Header.h */,
+				CFBC7E292354F2F600B77C59 /* SearchViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				TargetAttributes = {
 					83F6429E23468E4700DCA406 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -329,6 +335,7 @@
 				CFEE8D6B234C2E60008039D4 /* Basket.swift in Sources */,
 				83F642BE23469F7800DCA406 /* FirebaseCollectionReference.swift in Sources */,
 				83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */,
+				CFBC7E2A2354F2F600B77C59 /* SearchViewController.swift in Sources */,
 				83F642C62346B77D00DCA406 /* Constants.swift in Sources */,
 				CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */,
 				CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */,
@@ -482,6 +489,7 @@
 			baseConfigurationReference = 32DFB122CAB1B17C44406D66 /* Pods-Market.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4F7JSWEM4N;
 				INFOPLIST_FILE = Market/Info.plist;
@@ -491,6 +499,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.periferia.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Market/Main Views/Market-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,6 +511,7 @@
 			baseConfigurationReference = 0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4F7JSWEM4N;
 				INFOPLIST_FILE = Market/Info.plist;
@@ -510,6 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.periferia.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Market/Main Views/Market-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

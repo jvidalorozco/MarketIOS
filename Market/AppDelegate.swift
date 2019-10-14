@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         //Firebase
         FirebaseApp.configure()
-
+        initializePaypal()
         return true
     }
 
@@ -36,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    //MARK: - Paypal Init
+    func initializePaypal(){
+//        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction : "AaYDFS86H8hLkcTeJSZghLUtvxwzxBMLcF72iIblNsyVbmBsqQ7DNxBAMHlWaP0oKcEXEYSLb6x1LvZI",PayPalEnvironmentSandbox:"sb-b66eh390723@personal.example.com"])
+        
+         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction :"AVmpCoX4_wF3oaiUaUk-413tVFtFxp-66OLX0zkjrE8yX1RqIbdvfkIDMhEPaBdk7kFwBF6M_9neyVWo"
+          , PayPalEnvironmentSandbox: "dkababian-facilitator@yahoo.com"])
+    }
 
 }
 

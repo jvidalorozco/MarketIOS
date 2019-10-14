@@ -26,6 +26,15 @@ class BasketViewController: UIViewController {
     
     let hud = JGProgressHUD(style: .dark)
     
+    var enviroment: String = PayPalEnvironmentNoNetwork {
+            willSet (newEnviroment){
+                if (newEnviroment != enviroment){
+                    PayPalMobile.preconnect(withEnvironment: newEnviroment)
+                }
+            }
+    }
+    
+    var payPalConfig = PayPalConfiguration()
     
     
     //MARK: View Lifecycle
@@ -33,7 +42,7 @@ class BasketViewController: UIViewController {
         super.viewDidLoad()
        
         tableview.tableFooterView = footerView
-        
+        setupPaypal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,10 +62,7 @@ class BasketViewController: UIViewController {
     @IBAction func checkoutPressed(_ sender: Any) {
         
         if MUser.currentUser()!.onBoard {
-            tempFunction()
-            addItemsToPurcharsedHistory(self.purcharsedItemIds)
-            emptyTheBasket()
-            
+          payButtonPressed()
         }else{
             self.hud.textLabel.text = "Please complete you profile!"
             self.hud.indicatorView  = JGProgressHUDErrorIndicatorView()
@@ -87,11 +93,7 @@ class BasketViewController: UIViewController {
     }
     
     //MARK: - Helper Functions
-    func tempFunction() {
-        for item in allitems {
-            purcharsedItemIds.append(item.id)
-        }
-    }
+    
     
     private func updateTotalLabels(_ isEmpty: Bool){
         
@@ -172,6 +174,46 @@ class BasketViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - pAYPAL
+    private func setupPaypal(){
+        payPalConfig.acceptCreditCards = false
+        payPalConfig.merchantName      = "MarketDev"
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string:"https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+        payPalConfig.payPalShippingAddressOption = .both
+    }
+    
+    private func payButtonPressed(){
+        var itemsToBuy: [PayPalItem] = []
+        for item in allitems {
+            let tempItem = PayPalItem(name: item.name, withQuantity: 1, withPrice: NSDecimalNumber(value: item.price), withCurrency: "USD", withSku: nil)
+            purcharsedItemIds.append(item.id)
+            itemsToBuy.append(tempItem)
+        }
+        let subTotal = PayPalItem.totalPrice(forItems: itemsToBuy)
+        
+        //optional
+        let shippingCost = NSDecimalNumber(string: "50.0")
+        let tax = NSDecimalNumber(string: "5.00")
+        
+        let paymentDetails = PayPalPaymentDetails(subtotal: subTotal, withShipping: shippingCost, withTax: tax)
+        
+        let total = subTotal.adding(shippingCost).adding(tax)
+        let payment = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "Payment to MarketDev", intent: .sale)
+        payment.items = itemsToBuy
+        payment.paymentDetails = paymentDetails
+        
+        if payment.processable {
+            let paymentViewControlller = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            present(paymentViewControlller!, animated: true, completion: nil)
+        }else{
+            print("Payment not proccesable")
+        }
+    }
+    
+    
 }
 
 extension BasketViewController : UITableViewDelegate, UITableViewDataSource {
@@ -215,4 +257,22 @@ extension BasketViewController : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         showItemView(allitems[indexPath.row])
     }
+}
+
+
+//MARK: Helper extensions
+
+extension BasketViewController : PayPalPaymentDelegate {
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        paymentViewController.dismiss(animated: true) {
+            self.addItemsToPurcharsedHistory(self.purcharsedItemIds)
+            self.emptyTheBasket()
+        }
+    }
+    
+    
 }
