@@ -40,7 +40,30 @@ class SearchViewController: UIViewController {
     
     //MARK: -IBActions
     @IBAction func searchButtonClick(_ sender: Any) {
-        
+        if searchTextField.text != "" {
+            
+           
+            //search
+            emptyTextField()
+            animateSeachtOptionsIn()
+            dismissKeyBoard()
+            
+             searchInFirebase(forName: searchTextField.text!)
+            
+        }
+    }
+    
+    //MARK: -Search database
+    private func searchInFirebase(forName: String){
+        showLoadingActivityIndicator()
+        searchAlgolia(searchString: forName) { (itemIds) in
+            downloadItems(itemIds) { (allItems) in
+                
+                self.searchResults = allItems
+                self.tableViewSearch.reloadData()
+                self.hideLoadingActivityIndicator()
+            }
+        }
     }
     
     @IBAction func searchBarButtonClick(_ sender: Any) {
@@ -125,7 +148,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellSearch", for: indexPath) as! ItemsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellsearch", for: indexPath) as! ItemsTableViewCell
         
         cell.generateCell(searchResults[indexPath.row])
         

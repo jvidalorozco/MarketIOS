@@ -9,7 +9,11 @@
 import Foundation
 
 //IDS and Keys
-public let kFILEREFERENCE = "gs://market-31011.appspot.com"
+public let kFILEREFERENCE  = "gs://market-31011.appspot.com"
+public let kALGOLIA_APP_ID = "NT4EUBNI7F"
+public let kALGOLIA_SEARCH_KEY  = "ddc166a891d8c3810a22517e6fe35c22"
+public let kALGOLIA_ADMIN_KEY   = "6fdee77cf87a9a040fcffc932805fecf"
+
 
 //Firebase Headers
 public let kUSER_PATH      = "User"

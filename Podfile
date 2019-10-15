@@ -15,4 +15,5 @@ target 'Market' do
   pod 'Gallery'
   pod 'NVActivityIndicatorView'
   pod 'PayPal-iOS-SDK'
+  pod 'InstantSearchClient'
 end

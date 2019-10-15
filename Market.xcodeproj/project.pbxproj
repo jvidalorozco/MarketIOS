@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831A0C89235648600073BA38 /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A0C88235648600073BA38 /* AlgoliaService.swift */; };
 		83A036DF234FE5FF008AEFD8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */; };
 		83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642A223468E4700DCA406 /* AppDelegate.swift */; };
 		83F642A523468E4700DCA406 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642A423468E4700DCA406 /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		32DFB122CAB1B17C44406D66 /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
+		831A0C88235648600073BA38 /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		83F6429F23468E4700DCA406 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F642A223468E4700DCA406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				83F642C22346AC5A00DCA406 /* Category.swift */,
 				CFEE8D6A234C2E60008039D4 /* Basket.swift */,
 				CFDBAE2B23501E940037FDDE /* MUser.swift */,
+				831A0C88235648600073BA38 /* AlgoliaService.swift */,
 			);
 			name = Model;
 			path = "Custom cells";
@@ -327,6 +330,7 @@
 				CF857986234AE5B4004668FF /* ImageCollectionViewCell.swift in Sources */,
 				CF857984234AD9FC004668FF /* ItemViewController.swift in Sources */,
 				CF912C7323492EFF00321667 /* Downloader.swift in Sources */,
+				831A0C89235648600073BA38 /* AlgoliaService.swift in Sources */,
 				CF079CA32352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift in Sources */,
 				CF912C7123492ED000321667 /* Reachability.swift in Sources */,
 				CF116E082349B16A007CACE6 /* ItemsTableViewCell.swift in Sources */,

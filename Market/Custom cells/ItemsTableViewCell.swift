@@ -15,8 +15,8 @@ class ItemsTableViewCell: UITableViewCell {
     @IBOutlet weak var valueItem: UILabel!
     
     func generateCell(_ item: Item){
-        nameItem.text        = item.name
-        descriptionItem.text = item.description
+        nameItem.text        =  item.name
+        descriptionItem.text =  item.description
         valueItem.text       = convertToCurrencty(item.price)
         if item.imageLinks != nil && item.imageLinks.count > 0 {
             downloadImages(imageUrls: [item.imageLinks.first!]) { (arrayImages) in
