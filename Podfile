@@ -16,4 +16,5 @@ target 'Market' do
   pod 'NVActivityIndicatorView'
   pod 'PayPal-iOS-SDK'
   pod 'InstantSearchClient'
+  pod 'EmptyDataSet-Swift'
 end
