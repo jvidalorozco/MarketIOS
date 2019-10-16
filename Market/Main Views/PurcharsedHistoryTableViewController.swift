@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 class PurcharsedHistoryTableViewController: UITableViewController {
 
@@ -18,6 +19,8 @@ class PurcharsedHistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         
     }
     
@@ -52,4 +55,21 @@ class PurcharsedHistoryTableViewController: UITableViewController {
         }
     }
    
+}
+
+
+//MARK: Empty Datasource
+extension PurcharsedHistoryTableViewController : EmptyDataSetSource, EmptyDataSetDelegate {
+ 
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No item to display")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please check back later")
+    }
 }

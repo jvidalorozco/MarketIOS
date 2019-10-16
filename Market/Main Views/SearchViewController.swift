@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import EmptyDataSet_Swift
 
 class SearchViewController: UIViewController {
    
@@ -28,6 +29,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         tableViewSearch.tableFooterView = UIView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        
+        tableViewSearch.emptyDataSetSource = self
+        tableViewSearch.emptyDataSetSource = self
         
     }
     
@@ -160,8 +164,31 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         showItemView(withItem: searchResults[indexPath.row])
     }
+   
+}
+
+extension SearchViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+           return NSAttributedString(string: "No items to display")
+       }
+       
+       func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+           return UIImage(named: "emptyData")
+       }
+       
+       func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+           return NSAttributedString(string: "Please check back later")
+       }
     
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> UIImage? {
+        return UIImage(named: "search")
+    }
     
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
+        return NSAttributedString(string: "Start searching...")
+    }
     
-    
+    func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+        showSearchField()
+    }
 }
