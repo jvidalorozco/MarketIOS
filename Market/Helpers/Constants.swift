@@ -8,6 +8,15 @@
 
 import Foundation
 
+enum Constants {
+static let publishablekey     = "pk_test_dvoNyBd88RrRySN7NxHU4wWF009yeySTsW"
+static let baseURLString      = "http://localhost:3000/"
+static let defaultCurrency    = "usd"
+static let defaultDescription = "Purcharse from market"
+}
+
+
+
 //IDS and Keys
 public let kFILEREFERENCE  = "gs://market-31011.appspot.com"
 public let kALGOLIA_APP_ID = "NT4EUBNI7F"

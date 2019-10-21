@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         //Firebase
         FirebaseApp.configure()
-        initializePaypal()
+        //initializePaypal()
+        initializeStripe()
         return true
     }
 
@@ -37,11 +39,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     //MARK: - Paypal Init
-    func initializePaypal(){
-//        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction : "AaYDFS86H8hLkcTeJSZghLUtvxwzxBMLcF72iIblNsyVbmBsqQ7DNxBAMHlWaP0oKcEXEYSLb6x1LvZI",PayPalEnvironmentSandbox:"sb-b66eh390723@personal.example.com"])
+//    func initializePaypal(){
+////        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction : "AaYDFS86H8hLkcTeJSZghLUtvxwzxBMLcF72iIblNsyVbmBsqQ7DNxBAMHlWaP0oKcEXEYSLb6x1LvZI",PayPalEnvironmentSandbox:"sb-b66eh390723@personal.example.com"])
+//
+//         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction :"AVmpCoX4_wF3oaiUaUk-413tVFtFxp-66OLX0zkjrE8yX1RqIbdvfkIDMhEPaBdk7kFwBF6M_9neyVWo"
+//          , PayPalEnvironmentSandbox: "dkababian-facilitator@yahoo.com"])
+//    }
+    
+    //MARK: Stripe init
+    func initializeStripe(){
+        STPPaymentConfiguration.shared().publishableKey = Constants.publishablekey
         
-         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction :"AVmpCoX4_wF3oaiUaUk-413tVFtFxp-66OLX0zkjrE8yX1RqIbdvfkIDMhEPaBdk7kFwBF6M_9neyVWo"
-          , PayPalEnvironmentSandbox: "dkababian-facilitator@yahoo.com"])
     }
 
 }

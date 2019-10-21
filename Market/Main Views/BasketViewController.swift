@@ -8,6 +8,7 @@
 
 import UIKit
 import JGProgressHUD
+import Stripe
 
 class BasketViewController: UIViewController {
    
@@ -25,16 +26,16 @@ class BasketViewController: UIViewController {
     var purcharsedItemIds : [String] = []
     
     let hud = JGProgressHUD(style: .dark)
-    
-    var enviroment: String = PayPalEnvironmentNoNetwork {
-            willSet (newEnviroment){
-                if (newEnviroment != enviroment){
-                    PayPalMobile.preconnect(withEnvironment: newEnviroment)
-                }
-            }
-    }
-    
-    var payPalConfig = PayPalConfiguration()
+    var totalPrice = 0
+//    var enviroment: String = PayPalEnvironmentNoNetwork {
+//            willSet (newEnviroment){
+//                if (newEnviroment != enviroment){
+//                    PayPalMobile.preconnect(withEnvironment: newEnviroment)
+//                }
+//            }
+//    }
+//
+//    var payPalConfig = PayPalConfiguration()
     
     
     //MARK: View Lifecycle
@@ -42,7 +43,7 @@ class BasketViewController: UIViewController {
         super.viewDidLoad()
        
         tableview.tableFooterView = footerView
-        setupPaypal()
+       // setupPaypal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +63,7 @@ class BasketViewController: UIViewController {
     @IBAction func checkoutPressed(_ sender: Any) {
         
         if MUser.currentUser()!.onBoard {
-          payButtonPressed()
+            //finishPayment(token: )
         }else{
             self.hud.textLabel.text = "Please complete you profile!"
             self.hud.indicatorView  = JGProgressHUDErrorIndicatorView()
@@ -175,42 +176,49 @@ class BasketViewController: UIViewController {
         
     }
     
-    //MARK: - pAYPAL
-    private func setupPaypal(){
-        payPalConfig.acceptCreditCards = false
-        payPalConfig.merchantName      = "MarketDev"
-        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
-        payPalConfig.merchantUserAgreementURL = URL(string:"https://www.paypal.com/webapps/mpp/ua/useragreement-full")
-        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
-        payPalConfig.payPalShippingAddressOption = .both
+    //MARK: - Stripe
+//    private func setupPaypal(){
+//        payPalConfig.acceptCreditCards = false
+//        payPalConfig.merchantName      = "MarketDev"
+//        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+//        payPalConfig.merchantUserAgreementURL = URL(string:"https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+//        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+//        payPalConfig.payPalShippingAddressOption = .both
+//    }
+    
+    private func finishPayment(token: STPToken){
+        self.totalPrice = 0
+        for item in allitems {
+         
+            purcharsedItemIds.append(item.id)
+            self.totalPrice += Int(item.price)
+            
+        }
+        self.totalPrice = self.totalPrice * 100
+        StripeClient.sharedClient.createAndConfirmPayment(token, amount: self.totalPrice) { (error) in
+            if error == nil {
+                self.emptyTheBasket()
+                self.addItemsToPurcharsedHistory(self.purcharsedItemIds)
+                
+                //Show notification
+                self.showNotification(text: "Payment succ!ess!", isError: false)
+            }else{
+                print("error",error!.localizedDescription)
+            }
+        }
     }
     
-    private func payButtonPressed(){
-        var itemsToBuy: [PayPalItem] = []
-        for item in allitems {
-            let tempItem = PayPalItem(name: item.name, withQuantity: 1, withPrice: NSDecimalNumber(value: item.price), withCurrency: "USD", withSku: nil)
-            purcharsedItemIds.append(item.id)
-            itemsToBuy.append(tempItem)
-        }
-        let subTotal = PayPalItem.totalPrice(forItems: itemsToBuy)
+    private func showNotification(text : String, isError: Bool){
         
-        //optional
-        let shippingCost = NSDecimalNumber(string: "50.0")
-        let tax = NSDecimalNumber(string: "5.00")
-        
-        let paymentDetails = PayPalPaymentDetails(subtotal: subTotal, withShipping: shippingCost, withTax: tax)
-        
-        let total = subTotal.adding(shippingCost).adding(tax)
-        let payment = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "Payment to MarketDev", intent: .sale)
-        payment.items = itemsToBuy
-        payment.paymentDetails = paymentDetails
-        
-        if payment.processable {
-            let paymentViewControlller = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-            present(paymentViewControlller!, animated: true, completion: nil)
+        if isError {
+          self.hud.indicatorView  = JGProgressHUDErrorIndicatorView()
         }else{
-            print("Payment not proccesable")
+          self.hud.indicatorView  = JGProgressHUDSuccessIndicatorView()
         }
+        
+        self.hud.textLabel.text = text
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
     }
     
     

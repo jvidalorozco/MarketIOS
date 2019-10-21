@@ -17,4 +17,6 @@ target 'Market' do
   pod 'PayPal-iOS-SDK'
   pod 'InstantSearchClient'
   pod 'EmptyDataSet-Swift'
+  pod 'Stripe'
+  pod 'Alamofire'
 end

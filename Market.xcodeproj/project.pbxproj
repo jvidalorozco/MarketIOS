@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376BA56ED29DAEC1803C37D4 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BD8D121209124DC8F1A879 /* Pods_Market.framework */; };
+		52D9D4FE235D3F4A0035212C /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9D4FD235D3F4A0035212C /* StripeClient.swift */; };
 		831A0C89235648600073BA38 /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A0C88235648600073BA38 /* AlgoliaService.swift */; };
 		83A036DF234FE5FF008AEFD8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */; };
 		83F642A323468E4700DCA406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F642A223468E4700DCA406 /* AppDelegate.swift */; };
@@ -37,12 +39,11 @@
 		CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB262349032200FB3931 /* AddItemViewController.swift */; };
 		CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */; };
 		CFFEFB2B2349037800FB3931 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFB2A2349037800FB3931 /* Item.swift */; };
-		DD8624131FBA70FA9D03E8D6 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC38623964D15996587A3247 /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
-		32DFB122CAB1B17C44406D66 /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
+		50BD8D121209124DC8F1A879 /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D9D4FD235D3F4A0035212C /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		831A0C88235648600073BA38 /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		83A036DE234FE5FF008AEFD8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		83F6429F23468E4700DCA406 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +59,8 @@
 		83F642BD23469F7800DCA406 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		83F642C22346AC5A00DCA406 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		83F642C52346B77D00DCA406 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4340D9D58F83725E71407E3 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
+		B67D25A72EB7E9DA2941A307 /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
 		CF079C9B2352A03000F3180C /* FinisRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinisRegisterViewController.swift; sourceTree = "<group>"; };
 		CF079C9E2352B33500F3180C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CF079CA22352EDAB00F3180C /* PurcharsedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurcharsedHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		CFFEFB262349032200FB3931 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		CFFEFB282349032D00FB3931 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		CFFEFB2A2349037800FB3931 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		FC38623964D15996587A3247 /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,20 +86,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD8624131FBA70FA9D03E8D6 /* Pods_Market.framework in Frameworks */,
+				376BA56ED29DAEC1803C37D4 /* Pods_Market.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160D0E87959507CE86F19D1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50BD8D121209124DC8F1A879 /* Pods_Market.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		83F6429623468E4700DCA406 = {
 			isa = PBXGroup;
 			children = (
 				83F642A123468E4700DCA406 /* Market */,
 				83F642A023468E4700DCA406 /* Products */,
 				C0915C344FD9F0BB2D5AA965 /* Pods */,
-				E7CC1272B2BDB9FC4908D407 /* Frameworks */,
+				160D0E87959507CE86F19D1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +185,7 @@
 				CFEE8D6A234C2E60008039D4 /* Basket.swift */,
 				CFDBAE2B23501E940037FDDE /* MUser.swift */,
 				831A0C88235648600073BA38 /* AlgoliaService.swift */,
+				52D9D4FD235D3F4A0035212C /* StripeClient.swift */,
 			);
 			name = Model;
 			path = "Custom cells";
@@ -183,8 +194,8 @@
 		C0915C344FD9F0BB2D5AA965 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				32DFB122CAB1B17C44406D66 /* Pods-Market.debug.xcconfig */,
-				0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */,
+				B67D25A72EB7E9DA2941A307 /* Pods-Market.debug.xcconfig */,
+				B4340D9D58F83725E71407E3 /* Pods-Market.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -198,14 +209,6 @@
 			path = "Login Views";
 			sourceTree = "<group>";
 		};
-		E7CC1272B2BDB9FC4908D407 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FC38623964D15996587A3247 /* Pods_Market.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,11 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F642B323468E4800DCA406 /* Build configuration list for PBXNativeTarget "Market" */;
 			buildPhases = (
-				73F51C90C0487A165EF769E1 /* [CP] Check Pods Manifest.lock */,
+				49140885455D94D4686147CE /* [CP] Check Pods Manifest.lock */,
 				83F6429B23468E4700DCA406 /* Sources */,
 				83F6429C23468E4700DCA406 /* Frameworks */,
 				83F6429D23468E4700DCA406 /* Resources */,
-				7DCB2FF5117838D7137D19FB /* [CP] Embed Pods Frameworks */,
+				2EADD85002A6FF8DC4A7198C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,7 +280,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73F51C90C0487A165EF769E1 /* [CP] Check Pods Manifest.lock */ = {
+		2EADD85002A6FF8DC4A7198C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49140885455D94D4686147CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,23 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DCB2FF5117838D7137D19FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Market/Pods-Market-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -342,6 +345,7 @@
 				CFBC7E2A2354F2F600B77C59 /* SearchViewController.swift in Sources */,
 				83F642C62346B77D00DCA406 /* Constants.swift in Sources */,
 				CFFEFB292349032D00FB3931 /* ItemsTableViewController.swift in Sources */,
+				52D9D4FE235D3F4A0035212C /* StripeClient.swift in Sources */,
 				CFFEFB272349032200FB3931 /* AddItemViewController.swift in Sources */,
 				CF116E0A2349C388007CACE6 /* HelpersFunctions.swift in Sources */,
 				83F642B7234696ED00DCA406 /* CategoryCollectionViewController.swift in Sources */,
@@ -490,7 +494,7 @@
 		};
 		83F642B423468E4800DCA406 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32DFB122CAB1B17C44406D66 /* Pods-Market.debug.xcconfig */;
+			baseConfigurationReference = B67D25A72EB7E9DA2941A307 /* Pods-Market.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -503,7 +507,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.periferia.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Market/Main Views/Market-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/macbookpro/Documents/Proyects/IOS Proyects/MarketIOS/Market/Main Views/Market-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,7 +516,7 @@
 		};
 		83F642B523468E4800DCA406 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0742D34A541901748CCCD197 /* Pods-Market.release.xcconfig */;
+			baseConfigurationReference = B4340D9D58F83725E71407E3 /* Pods-Market.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -525,7 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.periferia.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Market/Main Views/Market-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/macbookpro/Documents/Proyects/IOS Proyects/MarketIOS/Market/Main Views/Market-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
