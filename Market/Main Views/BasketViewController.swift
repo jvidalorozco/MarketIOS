@@ -63,7 +63,7 @@ class BasketViewController: UIViewController {
     @IBAction func checkoutPressed(_ sender: Any) {
         
         if MUser.currentUser()!.onBoard {
-            //finishPayment(token: )
+            showPaymentOptions()
         }else{
             self.hud.textLabel.text = "Please complete you profile!"
             self.hud.indicatorView  = JGProgressHUDErrorIndicatorView()
@@ -221,7 +221,24 @@ class BasketViewController: UIViewController {
         self.hud.dismiss(afterDelay: 2.0)
     }
     
-    
+    func showPaymentOptions() {
+        let alertController = UIAlertController(title: "Payment Optiones", message: "Choose prefred payment option", preferredStyle: .actionSheet)
+        
+        let cardAction = UIAlertAction(title: "Pay with Card", style: .default) { (action) in
+            
+            //show card number view
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            
+        }
+        
+        alertController.addAction(cardAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension BasketViewController : UITableViewDelegate, UITableViewDataSource {
