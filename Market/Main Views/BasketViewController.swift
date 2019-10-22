@@ -201,7 +201,7 @@ class BasketViewController: UIViewController {
                 self.addItemsToPurcharsedHistory(self.purcharsedItemIds)
                 
                 //Show notification
-                self.showNotification(text: "Payment succ!ess!", isError: false)
+                self.showNotification(text: "Payment success!", isError: false)
             }else{
                 print("error",error!.localizedDescription)
             }
@@ -222,11 +222,16 @@ class BasketViewController: UIViewController {
     }
     
     func showPaymentOptions() {
-        let alertController = UIAlertController(title: "Payment Optiones", message: "Choose prefred payment option", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Payment Options", message: "Choose prefred payment option", preferredStyle: .actionSheet)
         
         let cardAction = UIAlertAction(title: "Pay with Card", style: .default) { (action) in
             
             //show card number view
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "cardInfo")
+              as! CardInfoViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true,completion: nil)
             
         }
         
@@ -297,6 +302,19 @@ extension BasketViewController : PayPalPaymentDelegate {
             self.addItemsToPurcharsedHistory(self.purcharsedItemIds)
             self.emptyTheBasket()
         }
+    }
+    
+    
+}
+
+extension BasketViewController: CardInfoViewControllerDelegate {
+    func didClickDone(_ token: STPToken) {
+        print("Token is",token)
+        finishPayment(token: token)
+    }
+    
+    func didClickCancel() {
+        showNotification(text: "Payment canceled", isError: true)
     }
     
     
