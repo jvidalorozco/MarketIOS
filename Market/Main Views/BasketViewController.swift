@@ -204,6 +204,8 @@ class BasketViewController: UIViewController {
                 self.showNotification(text: "Payment success!", isError: false)
             }else{
                 print("error",error!.localizedDescription)
+                self.showNotification(text: error!.localizedDescription, isError: true)
+                
             }
         }
     }

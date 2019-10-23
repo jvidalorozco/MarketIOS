@@ -45,12 +45,13 @@ class CardInfoViewController: UIViewController {
     //MARK: IBActions
     @IBAction func cancelButtonPressed(_ sender: Any) {
    
-        processCard()
+        
+        delegate?.didClickCancel()
+        dissmissView()
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
-        delegate?.didClickCancel()
-        dissmissView()
+        processCard()
     }
     
     //MARK: Helpers
@@ -63,7 +64,7 @@ class CardInfoViewController: UIViewController {
         let cardParams = STPCardParams()
         cardParams.number = self.paymentCardTextField.cardNumber
         cardParams.expMonth = self.paymentCardTextField.expirationMonth
-        cardParams.expYear = self.paymentCardTextField.expirationMonth
+        cardParams.expYear = self.paymentCardTextField.expirationYear
         cardParams.cvc = self.paymentCardTextField.cvc
         
         STPAPIClient.shared().createToken(withCard: cardParams) { (token, error) in
